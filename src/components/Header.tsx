@@ -28,8 +28,13 @@ const Header = () => {
 
         {/* Auth Buttons */}
         <div className="flex items-center space-x-3">
-          <Button variant="ghost" size="sm" className="text-deep-burgundy hover:text-soft-rose font-medium">
-            Log In
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="text-deep-burgundy hover:text-soft-rose font-medium"
+            asChild
+          >
+            <a href="/login">Log In</a>
           </Button>
           <Button variant="hero" size="sm" className="font-medium">
             Sign Up
