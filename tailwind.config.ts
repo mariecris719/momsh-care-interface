@@ -57,6 +57,25 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Better Momsh Brand Colors
+        "soft-rose": "hsl(var(--soft-rose))",
+        "deep-burgundy": "hsl(var(--deep-burgundy))",
+        "peach": "hsl(var(--peach))",
+        "calm-blue": "hsl(var(--calm-blue))",
+        "fresh-green": "hsl(var(--fresh-green))",
+        "sky-blue": "hsl(var(--sky-blue))",
+      },
+      fontFamily: {
+        'lato': ['Lato', 'sans-serif'],
+        'sans': ['Lato', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-hero': 'var(--gradient-hero)',
+        'gradient-soft': 'var(--gradient-soft)',
+      },
+      boxShadow: {
+        'soft': 'var(--shadow-soft)',
+        'button': 'var(--shadow-button)',
       },
       borderRadius: {
         lg: "var(--radius)",
