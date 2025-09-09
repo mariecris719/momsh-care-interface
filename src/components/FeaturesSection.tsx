@@ -26,25 +26,41 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="py-16 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div key={index} className="text-center space-y-4">
-                <div className={`w-16 h-16 ${feature.bgColor} rounded-full flex items-center justify-center mx-auto`}>
-                  <Icon className={`w-8 h-8 ${feature.color}`} />
-                </div>
-                <h3 className="text-xl font-bold text-primary">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            );
-          })}
+    <section className="py-16 bg-soft-rose/20">
+      <div className="container mx-auto px-6">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {/* Free Shipping */}
+          <div className="text-center space-y-3 p-6 bg-white/60 rounded-2xl backdrop-blur-sm">
+            <div className="w-12 h-12 mx-auto bg-soft-rose/30 rounded-full flex items-center justify-center">
+              <Truck className="h-6 w-6 text-soft-rose" />
+            </div>
+            <h3 className="text-lg font-bold text-deep-burgundy">Free Shipping</h3>
+            <p className="text-sm text-soft-rose">
+              Free shipping on all orders over $50
+            </p>
+          </div>
+
+          {/* Trusted Brands */}
+          <div className="text-center space-y-3 p-6 bg-white/60 rounded-2xl backdrop-blur-sm">
+            <div className="w-12 h-12 mx-auto bg-soft-rose/30 rounded-full flex items-center justify-center">
+              <Shield className="h-6 w-6 text-soft-rose" />
+            </div>
+            <h3 className="text-lg font-bold text-deep-burgundy">Trusted Brands</h3>
+            <p className="text-sm text-soft-rose">
+              Carefully selected quality products
+            </p>
+          </div>
+
+          {/* Mom-Approved Products */}
+          <div className="text-center space-y-3 p-6 bg-white/60 rounded-2xl backdrop-blur-sm">
+            <div className="w-12 h-12 mx-auto bg-soft-rose/30 rounded-full flex items-center justify-center">
+              <Heart className="h-6 w-6 text-soft-rose" />
+            </div>
+            <h3 className="text-lg font-bold text-deep-burgundy">Mom-Approved Products</h3>
+            <p className="text-sm text-soft-rose">
+              Tested and recommended by real moms
+            </p>
+          </div>
         </div>
       </div>
     </section>
