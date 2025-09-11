@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -34,10 +35,10 @@ const Header = () => {
             className="text-deep-burgundy hover:text-soft-rose font-medium"
             asChild
           >
-            <a href="/login">Log In</a>
+            <Link to="/login">Log In</Link>
           </Button>
-          <Button variant="hero" size="sm" className="font-medium">
-            Sign Up
+          <Button variant="hero" size="sm" className="font-medium" asChild>
+            <Link to="/signup">Sign Up</Link>
           </Button>
         </div>
       </div>
