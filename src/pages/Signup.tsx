@@ -179,6 +179,98 @@ const Signup = () => {
                       </RadioGroup>
                     </div>
 
+                    {/* Business-specific fields */}
+                    {accountType === "business" && (
+                      <div className="space-y-6 pt-4 border-t border-soft-rose/20">
+                        <div className="space-y-2">
+                          <Label htmlFor="businessName" className="text-deep-burgundy/80 text-sm">
+                            Business Name
+                          </Label>
+                          <Input
+                            id="businessName"
+                            type="text"
+                            placeholder="Enter Business Name"
+                            className="h-10 text-sm"
+                            required
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="businessAddress" className="text-deep-burgundy/80 text-sm">
+                            Business Address
+                          </Label>
+                          <Input
+                            id="businessAddress"
+                            type="text"
+                            placeholder="Enter Business Address"
+                            className="h-10 text-sm"
+                            required
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="businessContact" className="text-deep-burgundy/80 text-sm">
+                            Business Contact
+                          </Label>
+                          <Input
+                            id="businessContact"
+                            type="tel"
+                            placeholder="Enter Business Contact Number"
+                            className="h-10 text-sm"
+                            required
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="businessCategory" className="text-deep-burgundy/80 text-sm">
+                            Business Category
+                          </Label>
+                          <select
+                            id="businessCategory"
+                            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                            required
+                          >
+                            <option value="">Select Business Category</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="retail">Retail</option>
+                            <option value="services">Services</option>
+                            <option value="technology">Technology</option>
+                            <option value="other">Other</option>
+                          </select>
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="businessLicense" className="text-deep-burgundy/80 text-sm">
+                            Business License Registration Form
+                          </Label>
+                          <div className="border-2 border-dashed border-soft-rose/30 rounded-lg p-6 text-center hover:border-soft-rose/50 transition-colors">
+                            <input
+                              id="businessLicense"
+                              type="file"
+                              accept=".pdf,.jpg,.jpeg,.png"
+                              className="hidden"
+                            />
+                            <label
+                              htmlFor="businessLicense"
+                              className="cursor-pointer flex flex-col items-center space-y-2"
+                            >
+                              <div className="w-8 h-8 bg-soft-rose/20 rounded-full flex items-center justify-center">
+                                <svg className="w-4 h-4 text-deep-burgundy/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                </svg>
+                              </div>
+                              <span className="text-sm text-deep-burgundy/60">
+                                Click to upload or drag file here
+                              </span>
+                              <span className="text-xs text-deep-burgundy/40">
+                                PDF, JPG, PNG (Max 10MB)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
                     <Button 
                       type="submit" 
                       variant="hero" 
