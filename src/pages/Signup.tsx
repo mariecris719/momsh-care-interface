@@ -189,7 +189,7 @@ const Signup = () => {
                           <Input
                             id="businessName"
                             type="text"
-                            placeholder="Enter Business Name"
+                            placeholder="Business Name"
                             className="h-10 text-sm"
                             required
                           />
@@ -202,20 +202,7 @@ const Signup = () => {
                           <Input
                             id="businessAddress"
                             type="text"
-                            placeholder="Enter Business Address"
-                            className="h-10 text-sm"
-                            required
-                          />
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="businessContact" className="text-deep-burgundy/80 text-sm">
-                            Business Contact
-                          </Label>
-                          <Input
-                            id="businessContact"
-                            type="tel"
-                            placeholder="Enter Business Contact Number"
+                            placeholder="Business Address"
                             className="h-10 text-sm"
                             required
                           />
@@ -230,7 +217,7 @@ const Signup = () => {
                             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                             required
                           >
-                            <option value="">Select Business Category</option>
+                            <option value="">Business Category</option>
                             <option value="healthcare">Healthcare</option>
                             <option value="retail">Retail</option>
                             <option value="services">Services</option>
@@ -240,10 +227,10 @@ const Signup = () => {
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="businessLicense" className="text-deep-burgundy/80 text-sm">
+                          <Label className="text-deep-burgundy/80 text-sm">
                             Business License Registration Form
                           </Label>
-                          <div className="border-2 border-dashed border-soft-rose/30 rounded-lg p-6 text-center hover:border-soft-rose/50 transition-colors">
+                          <div className="border-2 border-dashed border-soft-rose/30 rounded-lg p-4 text-center hover:border-soft-rose/50 transition-colors">
                             <input
                               id="businessLicense"
                               type="file"
@@ -254,19 +241,35 @@ const Signup = () => {
                               htmlFor="businessLicense"
                               className="cursor-pointer flex flex-col items-center space-y-2"
                             >
-                              <div className="w-8 h-8 bg-soft-rose/20 rounded-full flex items-center justify-center">
-                                <svg className="w-4 h-4 text-deep-burgundy/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                              <div className="w-12 h-12 bg-soft-rose/20 rounded-lg flex items-center justify-center">
+                                <svg className="w-6 h-6 text-soft-rose" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
                                 </svg>
                               </div>
-                              <span className="text-sm text-deep-burgundy/60">
-                                Click to upload or drag file here
-                              </span>
-                              <span className="text-xs text-deep-burgundy/40">
-                                PDF, JPG, PNG (Max 10MB)
+                              <span className="text-sm text-soft-rose font-medium">
+                                Click File here
                               </span>
                             </label>
                           </div>
+                        </div>
+
+                        <div className="flex items-start space-x-3">
+                          <input
+                            type="checkbox"
+                            id="businessTerms"
+                            className="mt-1 h-4 w-4 text-soft-rose border-gray-300 rounded focus:ring-soft-rose"
+                            required
+                          />
+                          <Label htmlFor="businessTerms" className="text-sm text-deep-burgundy/70 leading-5">
+                            By signing up, you agree to Bettermomsh's{" "}
+                            <span className="text-soft-rose hover:underline cursor-pointer">
+                              Terms of Service
+                            </span>{" "}
+                            &{" "}
+                            <span className="text-soft-rose hover:underline cursor-pointer">
+                              Policy
+                            </span>
+                          </Label>
                         </div>
                       </div>
                     )}
