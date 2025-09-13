@@ -384,7 +384,7 @@ const Signup = () => {
                       size="lg" 
                       className="w-full h-10 text-sm font-medium"
                     >
-                      Next
+                      Register
                     </Button>
                   </form>
 
