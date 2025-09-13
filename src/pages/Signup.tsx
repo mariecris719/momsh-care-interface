@@ -426,25 +426,25 @@ const Signup = () => {
       {/* Success Modal */}
       <Dialog open={showSuccess} onOpenChange={setShowSuccess}>
         <DialogContent className="sm:max-w-md bg-white border-0 shadow-xl">
-          <DialogHeader className="text-center space-y-4">
-            <div className="mx-auto w-16 h-16 bg-gradient-to-br from-soft-rose to-peach rounded-full flex items-center justify-center">
-              <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+          <DialogHeader className="text-center space-y-6">
+            <div className="mx-auto w-20 h-20 bg-gradient-to-br from-soft-rose/20 to-peach/20 rounded-full flex items-center justify-center">
+              <svg className="w-10 h-10 text-soft-rose" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 4V6C15 7.1 14.1 8 13 8V22H15C16.1 22 17 21.1 17 20V16L21 12V10L15 12V14H13V10C13 8.9 13.9 8 15 8V6L9 9V11C9 12.1 8.1 13 7 13H5V15H7C8.1 15 9 15.9 9 17V19C9 20.1 8.1 21 7 21H5V23H11V13C11 11.9 11.9 11 13 11H15V9Z"/>
               </svg>
             </div>
-            <DialogTitle className="text-2xl font-bold text-deep-burgundy">
-              SUCCESSFULLY REGISTERED!
+            <DialogTitle className="text-2xl font-bold text-deep-burgundy tracking-wide">
+              SUCCESSFULLY<br />REGISTERED!
             </DialogTitle>
-            <p className="text-deep-burgundy/60 text-sm">
-              Please verify by typing verification on your email link.
+            <p className="text-deep-burgundy/70 text-sm leading-relaxed">
+              Please standby for further confirmation in your email box.
             </p>
           </DialogHeader>
-          <div className="flex justify-center pt-4">
+          <div className="flex justify-center pt-6">
             <Button 
               onClick={handleSuccessClose}
               variant="hero" 
               size="lg" 
-              className="px-12"
+              className="px-16 py-3 text-white font-medium"
             >
               Proceed
             </Button>
