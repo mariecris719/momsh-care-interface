@@ -209,21 +209,57 @@ const Signup = () => {
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="businessCategory" className="text-deep-burgundy/80 text-sm">
-                            Business Category
+                          <Label htmlFor="taxId" className="text-deep-burgundy/80 text-sm">
+                            Tax Identification Number (TIN)*
                           </Label>
-                          <select
-                            id="businessCategory"
-                            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          <Input
+                            id="taxId"
+                            type="text"
+                            placeholder="Enter TIN"
+                            className="h-10 text-sm"
                             required
-                          >
-                            <option value="">Business Category</option>
-                            <option value="healthcare">Healthcare</option>
-                            <option value="retail">Retail</option>
-                            <option value="services">Services</option>
-                            <option value="technology">Technology</option>
-                            <option value="other">Other</option>
-                          </select>
+                          />
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="space-y-3">
+                            <Label className="text-deep-burgundy/80 text-sm">Business Type</Label>
+                            <RadioGroup
+                              defaultValue="individual"
+                              className="space-y-2"
+                            >
+                              <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="individual" id="businessIndividual" />
+                                <Label htmlFor="businessIndividual" className="text-sm">Individual</Label>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="sole-proprietor" id="soleProprietor" />
+                                <Label htmlFor="soleProprietor" className="text-sm">Sole Proprietor</Label>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="corporation" id="corporation" />
+                                <Label htmlFor="corporation" className="text-sm">Corporation</Label>
+                              </div>
+                            </RadioGroup>
+                          </div>
+
+                          <div className="space-y-2">
+                            <Label htmlFor="businessCategory" className="text-deep-burgundy/80 text-sm">
+                              Business Category
+                            </Label>
+                            <select
+                              id="businessCategory"
+                              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                              required
+                            >
+                              <option value="">Choose Category</option>
+                              <option value="healthcare">Healthcare</option>
+                              <option value="retail">Retail</option>
+                              <option value="services">Services</option>
+                              <option value="technology">Technology</option>
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
                         </div>
 
                         <div className="space-y-2">
