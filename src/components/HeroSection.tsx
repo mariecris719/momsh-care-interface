@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/pregnant-mom-hero.png";
 
 const HeroSection = () => {
@@ -23,15 +24,17 @@ const HeroSection = () => {
                 variant="hero" 
                 size="lg"
                 className="font-medium px-8 py-3 rounded-full"
+                asChild
               >
-                Log In
+                <Link to="/login">Log In</Link>
               </Button>
               <Button 
                 variant="hero-outline" 
                 size="lg"
                 className="font-medium px-8 py-3 rounded-full"
+                asChild
               >
-                Sign Up
+                <Link to="/signup">Sign Up</Link>
               </Button>
             </div>
           </div>
