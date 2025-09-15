@@ -1,45 +1,65 @@
 import { Button } from "@/components/ui/button";
-import { Heart } from "lucide-react";
+import { Heart, Search, User, ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 w-full bg-soft-rose/20 backdrop-blur supports-[backdrop-filter]:bg-soft-rose/20 border-b border-soft-rose/20">
-      <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <Heart className="h-6 w-6 text-soft-rose" />
-          <span className="text-lg font-bold text-deep-burgundy tracking-wide">
-            BETTER MOMSH
-          </span>
-        </div>
+    <header className="sticky top-0 z-50 w-full bg-background">
+      {/* Promotional Banner */}
+      <div className="bg-soft-rose text-white text-center py-2 px-4">
+        <p className="text-sm font-medium">Free shipping on all orders over $50</p>
+      </div>
+      
+      {/* Main Navigation */}
+      <div className="bg-background border-b border-border">
+        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center space-x-2">
+            <Heart className="h-6 w-6 text-soft-rose" />
+            <span className="text-lg font-bold text-deep-burgundy tracking-wide">
+              BetterMomsh
+            </span>
+          </div>
 
-        {/* Navigation - Hidden on mobile for cleaner look */}
-        <nav className="hidden lg:flex items-center space-x-8">
-          <a href="#products" className="text-deep-burgundy/70 hover:text-deep-burgundy transition-colors font-medium">
-            Products
-          </a>
-          <a href="#about" className="text-deep-burgundy/70 hover:text-deep-burgundy transition-colors font-medium">
-            About
-          </a>
-          <a href="#contact" className="text-deep-burgundy/70 hover:text-deep-burgundy transition-colors font-medium">
-            Contact
-          </a>
-        </nav>
+          {/* Navigation Menu */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-foreground/70 hover:text-foreground transition-colors font-medium">
+              Home
+            </Link>
+            <a href="#shop" className="text-foreground/70 hover:text-foreground transition-colors font-medium">
+              Shop
+            </a>
+            <a href="#categories" className="text-foreground/70 hover:text-foreground transition-colors font-medium">
+              Categories
+            </a>
+            <a href="#about" className="text-foreground/70 hover:text-foreground transition-colors font-medium">
+              About
+            </a>
+            <a href="#contact" className="text-foreground/70 hover:text-foreground transition-colors font-medium">
+              Contact
+            </a>
+          </nav>
 
-        {/* Auth Buttons */}
-        <div className="flex items-center space-x-3">
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            className="text-deep-burgundy hover:text-soft-rose font-medium"
-            asChild
-          >
-            <Link to="/login">Log In</Link>
-          </Button>
-          <Button variant="hero" size="sm" className="font-medium" asChild>
-            <Link to="/signup">Sign Up</Link>
-          </Button>
+          {/* Action Icons */}
+          <div className="flex items-center space-x-4">
+            <Button variant="ghost" size="sm" className="h-10 w-10 p-0">
+              <Search className="h-5 w-5 text-foreground/70" />
+            </Button>
+            <Button variant="ghost" size="sm" className="h-10 w-10 p-0">
+              <Heart className="h-5 w-5 text-foreground/70" />
+            </Button>
+            <Button variant="ghost" size="sm" className="h-10 w-10 p-0" asChild>
+              <Link to="/login">
+                <User className="h-5 w-5 text-foreground/70" />
+              </Link>
+            </Button>
+            <Button variant="ghost" size="sm" className="h-10 w-10 p-0 relative">
+              <ShoppingCart className="h-5 w-5 text-foreground/70" />
+              <span className="absolute -top-1 -right-1 bg-soft-rose text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
+                1
+              </span>
+            </Button>
+          </div>
         </div>
       </div>
     </header>
