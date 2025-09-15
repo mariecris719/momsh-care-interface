@@ -4,55 +4,56 @@ import heroImage from "@/assets/pregnant-mom-hero.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen bg-soft-rose/20 overflow-hidden">
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+    <section className="relative bg-gradient-to-br from-soft-rose/20 to-peach/10 overflow-hidden">
+      <div className="container mx-auto px-6 py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Left Content */}
           <div className="space-y-8 text-left lg:pr-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-deep-burgundy leading-tight tracking-tight">
-              CURATED PRODUCTS
-              <br />
-              FOR MODERN MOMS
-            </h1>
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-deep-burgundy leading-tight tracking-tight">
+                The Best for Your
+                <br />
+                <span className="text-soft-rose">Little One</span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-foreground/70 max-w-lg leading-relaxed">
+                Curated premium baby essentials that modern moms trust and love.
+              </p>
+            </div>
             
-            <p className="text-lg md:text-xl text-foreground/70 max-w-lg leading-relaxed">
-              Discover baby essentials that make parenting easier and more joyful.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <Button 
                 variant="hero" 
-                size="lg"
-                className="font-medium px-8 py-3 rounded-full"
-                asChild
+                size="xl"
+                className="font-medium rounded-full"
               >
-                <Link to="/login">Log In</Link>
+                Shop Now
               </Button>
               <Button 
                 variant="hero-outline" 
-                size="lg"
-                className="font-medium px-8 py-3 rounded-full"
+                size="xl"
+                className="font-medium rounded-full"
                 asChild
               >
-                <Link to="/signup">Sign Up</Link>
+                <Link to="/signup">Join Community</Link>
               </Button>
             </div>
           </div>
 
           {/* Right Image */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative z-10">
+            <div className="relative z-10 bg-white/50 backdrop-blur-sm rounded-3xl p-8 shadow-soft">
               <img 
                 src={heroImage} 
-                alt="Pregnant mom illustration - Better Momsh" 
+                alt="Happy mom with baby - Better Momsh" 
                 className="w-full max-w-sm lg:max-w-md object-contain"
               />
             </div>
             
             {/* Decorative botanical elements */}
-            <div className="absolute top-10 right-0 w-6 h-6 bg-fresh-green/40 rounded-full"></div>
-            <div className="absolute top-20 right-12 w-4 h-4 bg-calm-blue/40 rounded-full"></div>
-            <div className="absolute bottom-16 left-8 w-5 h-5 bg-peach/40 rounded-full"></div>
+            <div className="absolute top-10 right-0 w-8 h-8 bg-fresh-green/40 rounded-full animate-pulse"></div>
+            <div className="absolute top-20 right-12 w-6 h-6 bg-calm-blue/40 rounded-full animate-pulse delay-100"></div>
+            <div className="absolute bottom-16 left-8 w-7 h-7 bg-peach/40 rounded-full animate-pulse delay-200"></div>
           </div>
         </div>
       </div>
