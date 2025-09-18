@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight, Truck, Shield, Percent } from "lucide-react";
+import { ChevronLeft, ChevronRight, Truck, Shield, Percent, Star, Clock, Gift } from "lucide-react";
 import { useState } from "react";
+import babyCarePromo from "@/assets/baby-care-promo.jpg";
+import prenatalVitaminsPromo from "@/assets/prenatal-vitamins-promo.jpg";
+import maternityFashionPromo from "@/assets/maternity-fashion-promo.jpg";
+import newbornEssentialsPromo from "@/assets/newborn-essentials-promo.jpg";
 
 const PromoCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,39 +13,53 @@ const PromoCarousel = () => {
   const promobanners = [
     {
       id: 1,
-      title: "Up to 50% Off",
-      subtitle: "Prenatal Vitamins",
-      description: "Essential nutrients for mom & baby",
+      title: "Up to 55% OFF",
+      subtitle: "Baby Care Essentials",
+      description: "Premium bottles, diapers & more",
       buttonText: "Shop Now",
-      bgGradient: "from-soft-rose to-peach",
-      image: "🤱"
+      bgGradient: "bg-gradient-promo-1",
+      image: babyCarePromo,
+      badge: "₱300 OFF Voucher",
+      trustIcon: Gift,
+      isFlashSale: true
     },
     {
       id: 2,
       title: "Buy 1 Take 1",
-      subtitle: "Baby Care Sets",
-      description: "Complete newborn essentials",
+      subtitle: "Prenatal Vitamins",
+      description: "Essential nutrients for mom & baby",
       buttonText: "Claim Deal",
-      bgGradient: "from-peach to-soft-rose",
-      image: "👶"
+      bgGradient: "bg-gradient-promo-2",
+      image: prenatalVitaminsPromo,
+      badge: "Mall",
+      trustIcon: Star,
+      originalPrice: "₱1,299",
+      salePrice: "₱649"
     },
     {
       id: 3,
-      title: "Free Shipping",
-      subtitle: "Orders Over $50",
-      description: "Nationwide delivery guaranteed",
+      title: "Exclusive Deals",
+      subtitle: "Maternity Fashion",
+      description: "Comfort meets style for expecting moms",
       buttonText: "Shop Free",
-      bgGradient: "from-soft-rose via-peach to-soft-rose",
-      image: "🚚"
+      bgGradient: "bg-gradient-promo-3",
+      image: maternityFashionPromo,
+      badge: "Free Shipping",
+      trustIcon: Truck,
+      isLimitedTime: true
     },
     {
       id: 4,
       title: "0% Interest",
-      subtitle: "Payment Plans",
-      description: "Split your purchase into 4 payments",
+      subtitle: "Newborn Bundle",
+      description: "Complete starter kit for your little one",
       buttonText: "Learn More",
-      bgGradient: "from-peach to-soft-rose",
-      image: "💳"
+      bgGradient: "bg-gradient-promo-4",
+      image: newbornEssentialsPromo,
+      badge: "3 Months Plan",
+      trustIcon: Clock,
+      originalPrice: "₱2,999",
+      salePrice: "₱999/mo"
     }
   ];
 
@@ -81,40 +99,107 @@ const PromoCarousel = () => {
           {/* Desktop View - Multiple banners */}
           <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4">
             {promobanners.map((banner, index) => (
-              <Card key={banner.id} className={`relative overflow-hidden bg-gradient-to-br ${banner.bgGradient} border-0 transform transition-all duration-300 hover:scale-105 hover:shadow-lg`}>
-                <div className="p-6 text-center text-white relative z-10">
-                  <div className="text-4xl mb-3">{banner.image}</div>
-                  <h3 className="text-lg font-bold mb-1">{banner.title}</h3>
-                  <p className="text-sm font-semibold mb-1">{banner.subtitle}</p>
-                  <p className="text-xs opacity-90 mb-4">{banner.description}</p>
+              <Card key={banner.id} className={`relative overflow-hidden ${banner.bgGradient} border-0 transform transition-all duration-300 hover:scale-105 hover:shadow-xl group cursor-pointer`}>
+                {/* Badge */}
+                <div className="absolute top-3 left-3 z-20">
+                  <span className="bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+                    <banner.trustIcon className="h-3 w-3" />
+                    {banner.badge}
+                  </span>
+                </div>
+                
+                {/* Flash Sale Timer */}
+                {banner.isFlashSale && (
+                  <div className="absolute top-3 right-3 z-20">
+                    <span className="bg-destructive text-destructive-foreground text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                      Flash Sale!
+                    </span>
+                  </div>
+                )}
+
+                {/* Product Image */}
+                <div className="absolute right-2 top-2 w-20 h-20 opacity-80 group-hover:opacity-100 transition-opacity z-10">
+                  <img src={banner.image} alt={banner.subtitle} className="w-full h-full object-cover rounded-lg" />
+                </div>
+
+                <div className="p-4 text-white relative z-10">
+                  <div className="mb-3">
+                    <h3 className="text-xl font-black mb-1 drop-shadow-lg">{banner.title}</h3>
+                    <p className="text-sm font-bold mb-1 drop-shadow">{banner.subtitle}</p>
+                    <p className="text-xs opacity-90 drop-shadow">{banner.description}</p>
+                  </div>
+                  
+                  {/* Pricing */}
+                  {banner.originalPrice && (
+                    <div className="mb-3 flex items-center gap-2">
+                      <span className="text-xs line-through opacity-70">{banner.originalPrice}</span>
+                      <span className="text-sm font-bold bg-white/20 px-2 py-1 rounded">{banner.salePrice}</span>
+                    </div>
+                  )}
+
                   <Button 
                     size="sm" 
-                    className="bg-white/20 text-white border border-white/30 hover:bg-white/30 backdrop-blur-sm font-medium"
+                    className="bg-white/20 text-white border border-white/30 hover:bg-white/30 backdrop-blur-sm font-bold shadow-lg hover:shadow-xl transition-all"
                   >
                     {banner.buttonText}
                   </Button>
                 </div>
-                <div className="absolute inset-0 bg-black/10"></div>
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
               </Card>
             ))}
           </div>
 
           {/* Mobile View - Single banner with navigation */}
           <div className="md:hidden relative">
-            <Card className={`relative overflow-hidden bg-gradient-to-br ${promobanners[currentSlide].bgGradient} border-0 animate-fade-in`}>
-              <div className="p-8 text-center text-white relative z-10">
-                <div className="text-6xl mb-4">{promobanners[currentSlide].image}</div>
-                <h3 className="text-2xl font-bold mb-2">{promobanners[currentSlide].title}</h3>
-                <p className="text-lg font-semibold mb-2">{promobanners[currentSlide].subtitle}</p>
-                <p className="text-sm opacity-90 mb-6">{promobanners[currentSlide].description}</p>
+            <Card className={`relative overflow-hidden ${promobanners[currentSlide].bgGradient} border-0 animate-fade-in group`}>
+              {/* Badge */}
+              <div className="absolute top-4 left-4 z-20">
+                <span className="bg-primary text-primary-foreground text-xs font-bold px-3 py-2 rounded-full flex items-center gap-1">
+                  {(() => {
+                    const IconComponent = promobanners[currentSlide].trustIcon;
+                    return <IconComponent className="h-3 w-3" />;
+                  })()}
+                  {promobanners[currentSlide].badge}
+                </span>
+              </div>
+              
+              {/* Flash Sale Timer */}
+              {promobanners[currentSlide].isFlashSale && (
+                <div className="absolute top-4 right-4 z-20">
+                  <span className="bg-destructive text-destructive-foreground text-xs font-bold px-3 py-2 rounded-full animate-pulse">
+                    Flash Sale!
+                  </span>
+                </div>
+              )}
+
+              {/* Product Image */}
+              <div className="absolute right-4 top-16 w-24 h-24 opacity-80 z-10">
+                <img src={promobanners[currentSlide].image} alt={promobanners[currentSlide].subtitle} className="w-full h-full object-cover rounded-lg shadow-lg" />
+              </div>
+
+              <div className="p-8 text-white relative z-10">
+                <div className="mb-4">
+                  <h3 className="text-3xl font-black mb-2 drop-shadow-lg">{promobanners[currentSlide].title}</h3>
+                  <p className="text-lg font-bold mb-2 drop-shadow">{promobanners[currentSlide].subtitle}</p>
+                  <p className="text-sm opacity-90 drop-shadow">{promobanners[currentSlide].description}</p>
+                </div>
+                
+                {/* Pricing */}
+                {promobanners[currentSlide].originalPrice && (
+                  <div className="mb-4 flex items-center gap-3">
+                    <span className="text-sm line-through opacity-70">{promobanners[currentSlide].originalPrice}</span>
+                    <span className="text-lg font-bold bg-white/20 px-3 py-2 rounded">{promobanners[currentSlide].salePrice}</span>
+                  </div>
+                )}
+
                 <Button 
                   size="lg" 
-                  className="bg-white/20 text-white border border-white/30 hover:bg-white/30 backdrop-blur-sm font-medium"
+                  className="bg-white/20 text-white border border-white/30 hover:bg-white/30 backdrop-blur-sm font-bold shadow-lg hover:shadow-xl transition-all"
                 >
                   {promobanners[currentSlide].buttonText}
                 </Button>
               </div>
-              <div className="absolute inset-0 bg-black/10"></div>
+              <div className="absolute inset-0 bg-black/20"></div>
             </Card>
 
             {/* Navigation Arrows */}

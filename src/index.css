@@ -53,6 +53,11 @@ All colors MUST be HSL.
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--soft-rose)), hsl(var(--peach)));
     --gradient-soft: linear-gradient(180deg, hsl(0 0% 100%), hsl(var(--soft-rose) / 0.1));
+    --gradient-promo-1: linear-gradient(135deg, hsl(var(--soft-rose)), hsl(var(--peach)));
+    --gradient-promo-2: linear-gradient(135deg, hsl(var(--calm-blue)), hsl(var(--sky-blue)));
+    --gradient-promo-3: linear-gradient(135deg, hsl(var(--fresh-green)), hsl(var(--peach)));
+    --gradient-promo-4: linear-gradient(135deg, hsl(var(--deep-burgundy)), hsl(var(--soft-rose)));
+    --gradient-category: linear-gradient(135deg, hsl(var(--soft-rose) / 0.1), hsl(var(--peach) / 0.1));
 
     /* Shadows */
     --shadow-soft: 0 4px 20px hsl(var(--soft-rose) / 0.2);
